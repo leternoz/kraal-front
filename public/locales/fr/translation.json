@@ -2,5 +2,16 @@
   "navbar": {
     "home": "Accueil",
     "dashboard": "Tableau de bord"
+  },
+  "authentication": {
+    "signin": "Se connecter",
+    "signup": "S'inscrire",
+    "have-account": "J'ai déjà un compte",
+    "not-have-account": "Je n'ai pas encore de compte",
+    "forgot-password": "J'ai oublié mon mot de passe",
+    "email": "email",
+    "member-id": "identifiant intranet",
+    "password": "mot de passe",
+    "confirm-password": "confirmez votre mot de passe"
   }
 }

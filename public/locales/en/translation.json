@@ -2,5 +2,16 @@
   "navbar": {
     "home": "Home sweet home",
     "dashboard": "Dashboard"
+  },
+  "authentication": {
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "have-account": "I already have an account",
+    "not-have-account": "I don't have an account yet",
+    "forgot-password": "I forgot my password",
+    "email": "email",
+    "member-id": "intranet id",
+    "password": "password",
+    "confirm-password": "conifrm password"
   }
 }
