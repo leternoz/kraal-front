@@ -5,6 +5,7 @@
   },
   "authentication": {
     "signin": "Se connecter",
+    "signout": "Se déconnecter",
     "signup": "S'inscrire",
     "have-account": "J'ai déjà un compte",
     "not-have-account": "Je n'ai pas encore de compte",

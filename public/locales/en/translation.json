@@ -4,7 +4,8 @@
     "dashboard": "Dashboard"
   },
   "authentication": {
-    "signin": "Sign in",
+    "login": "Login",
+    "logout": "Logout",
     "signup": "Sign up",
     "have-account": "I already have an account",
     "not-have-account": "I don't have an account yet",

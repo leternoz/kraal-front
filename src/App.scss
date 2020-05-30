@@ -1,1 +1,40 @@
 @import "styles/main.scss";
+
+#root {
+    min-height: 100%;
+    background-color: $secondary;
+}
+
+header {
+    height: 10vh;
+    nav {
+        height: 100%;
+        max-height: 80px;
+        background: linear-gradient(180deg, $primary-rgba 0%, $third-rgba 100%);
+    
+        color: $secondary;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            height: 100%;
+            li {
+                display: flex ;
+                align-items: center;
+                height: inherit;
+               a {
+                   color: $secondary;
+                   font-size: 1.5em;
+                   font-weight: 600;
+                   text-decoration: none;
+                   &:hover {
+                       text-shadow: 0px 0px 5px rgb(255, 255, 255); 
+                   }
+               } 
+            }
+        }
+    }
+}
+section {
+    height: 80vh;
+}

@@ -1,0 +1,15 @@
+@import "../styles/main.scss";
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    form{
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-bottom: 10px;
+        }
+    }
+}

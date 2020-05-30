@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import {useTranslation} from 'react-i18next';
 
-import {signupMutation} from '../apollo-client/ApolloClient';
+import {signupMutation} from '../apollo-client/apolloClient';
 import {useAuth} from '../context/auth';
 
 

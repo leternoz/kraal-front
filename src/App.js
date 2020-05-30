@@ -26,10 +26,10 @@ function App() {
   const existingToken = JSON.parse(localStorage.getItem("token"));
   const [authToken, setAuthToken] = useState(existingToken);
   
-  const setToken = (data) => {
-    localStorage.setItem("token", JSON.stringify(data));
-    setAuthToken(data);
-  }
+  // const setToken = (data) => {
+  //   localStorage.setItem("token", JSON.stringify(data));
+  //   setAuthToken(data);
+  // }
 
   const httpLink = createHttpLink({
     uri: 'http://localhost:3003/graphql'
@@ -40,8 +40,15 @@ function App() {
     cache: new InMemoryCache(),
   });
 
+  function profile() {
+    console.log(authToken);
+    return authToken
+      ? <p>profile</p>
+      : null;
+  }
+
   return (
-    <AuthContext.Provider value={{ authToken, setAuthToken: setToken}}>
+    <AuthContext.Provider value={{ authToken, setAuthToken}}>
       <ApolloProvider client={client}>
         <Router>
           <header>
@@ -50,26 +57,30 @@ function App() {
                 <li>
                   <Link to="/">{t("navbar.home")}</Link>
                 </li>
-                <li>
+                {authToken && <li>
                   <Link to="/dashboard">{t("navbar.dashboard")}</Link>
-                </li>
-                <li>
-                  <Link to="/login">{t("authentication.signin")}</Link>
-                </li>
-                <li>
+                </li>}
+                {!authToken && <li>
+                  <Link to="/login">{t("authentication.login")}</Link>
+                </li>}
+                {!authToken && <li>
                   <Link to="/signup">{t("authentication.signup")}</Link>
-                </li>
+                </li>}
+                {authToken && <li>
+                  <Link onClick={() => setAuthToken()} to={{pathname: "/", state: {referer: ''}}}>{t("authentication.logout")}</Link>
+                </li>}
               </ul>
             </nav>
           </header>
-          <body>
+          <section>
+                {/* <AuthContext.Consumer>{ value => <p>{value}</p>}</AuthContext.Consumer> */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <PrivateRoute  path="/dashboard" component={Dashboard} />
             </Switch>
-          </body>
+          </section>
         </Router>
       </ApolloProvider>
     </AuthContext.Provider>
