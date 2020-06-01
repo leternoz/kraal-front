@@ -6,6 +6,7 @@ import {useTranslation} from 'react-i18next';
 import {signupMutation} from '../apollo-client/apolloClient';
 import {useAuth} from '../context/auth';
 
+import './Login.scss';
 
 function Signup() {
     const { t } = useTranslation();
@@ -30,7 +31,8 @@ function Signup() {
     }
 
     return (
-        <div>
+        <div class="signup">
+            <h1>{t("authentication.signup")}</h1>
             <Mutation mutation={signupMutation}>
                 { (mutation, { data }) =>  (
                     <form onSubmit={e=>{e.preventDefault(); postSignup(mutation, email, memberId, password, confirmPassword)}}>

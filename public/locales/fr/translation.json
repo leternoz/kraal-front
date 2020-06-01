@@ -14,5 +14,8 @@
     "member-id": "identifiant intranet",
     "password": "mot de passe",
     "confirm-password": "confirmez votre mot de passe"
+  },
+  "error": {
+    "title": "Une erreur est survenue"
   }
 }

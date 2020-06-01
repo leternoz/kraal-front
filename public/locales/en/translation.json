@@ -14,5 +14,8 @@
     "member-id": "intranet id",
     "password": "password",
     "confirm-password": "conifrm password"
+  },
+  "error": {
+    "title": "An error has occurred"
   }
 }

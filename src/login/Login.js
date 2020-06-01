@@ -37,6 +37,7 @@ function Login(props) {
 
     return (
         <div class="login">
+            <h1>{t("authentication.login")}</h1>
             <Mutation mutation={loginMutation}>
                 { (mutation, { data }) =>  (
                     <form onSubmit={e=>{e.preventDefault();postLogin(mutation, login, password)}}>

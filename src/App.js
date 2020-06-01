@@ -15,6 +15,8 @@ import Home from './home/Home';
 import Dashboard from './dashboard/Dashboard';
 import Login from './login/Login';
 import Signup from './login/Signup';
+import ErrorHandler from './error-handler/ErrorHandler';
+
 
 import './App.scss';
 
@@ -75,10 +77,12 @@ function App() {
           <section>
                 {/* <AuthContext.Consumer>{ value => <p>{value}</p>}</AuthContext.Consumer> */}
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-              <PrivateRoute  path="/dashboard" component={Dashboard} />
+              <ErrorHandler>
+                <Route exact path="/" component={Home} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <PrivateRoute  path="/dashboard" component={Dashboard} />
+              </ErrorHandler>
             </Switch>
           </section>
         </Router>
