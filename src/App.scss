@@ -3,20 +3,6 @@
 #root {
     min-height: 100%;
     background-color: $secondary;
-
-    h1 {
-        color: #185c2e;
-        font-size: 2.5em;
-    }
-    h2 {
-        color: $primary;
-    }
-    h3 {
-        color: $primary;
-    }
-    p {
-        color: $primary;
-    }
 }
 
 header {
@@ -40,6 +26,7 @@ header {
                    color: $secondary;
                    font-size: 1.5em;
                    font-weight: 600;
+                   letter-spacing: 1px;
                    text-decoration: none;
                    text-transform: uppercase;
                    &:hover {
@@ -57,4 +44,33 @@ section {
     align-items: center;
     height: 80vh;
     padding: 10px;
+
+    h1 {
+        color: #08544d;
+        font-size: 2.5em;
+    }
+    h2 {
+        color: $primary;
+        letter-spacing: 1px;
+    }
+    h3 {
+        color: $primary;
+        font-size: 1.3em;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    p, label {
+        color: #069083;
+        font-size: 1.1em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    button, input {
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    a {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
 }

@@ -11,11 +11,21 @@
     "not-have-account": "Je n'ai pas encore de compte",
     "forgot-password": "J'ai oublié mon mot de passe",
     "email": "email",
+    "your-email": "Votre adresse mail",
     "member-id": "identifiant intranet",
+    "your-member-id": "Votre identifiant intranet",
     "password": "mot de passe",
-    "confirm-password": "confirmez votre mot de passe"
+    "your-password": "Entrez votre mot de passe",
+    "confirm-password": "Confirmez votre mot de passe"
   },
   "error": {
-    "title": "Une erreur est survenue"
+    "title": "Une erreur est survenue",
+    "fetch": "Impossible de récupérer les données.",
+    "connect-server": "Impossible de se connecter au serveur.",
+    "internal-server": "Un problème s'est produit sur le serveur.",
+    "unknown": "Une erreur inconnue est survenue.",
+    "login": "Impossible de se connecter, soit l'identifiant n'existe pas ou le mot de passe est invalide.",
+    "login-format": "Veuillez vérifier que l'identifiant est soit une adresse mail ou un identifiant d'intranet valide.",
+    "signup": "Un erreur est survenue lors de l'inscription."
   }
 }

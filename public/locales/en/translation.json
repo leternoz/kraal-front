@@ -11,11 +11,21 @@
     "not-have-account": "I don't have an account yet",
     "forgot-password": "I forgot my password",
     "email": "email",
+    "your-email": "Your email address",
     "member-id": "intranet id",
+    "your-member-id": "Your member id",
     "password": "password",
-    "confirm-password": "conifrm password"
+    "your-password": "Enter your password",
+    "confirm-password": "Confirm your password"
   },
   "error": {
-    "title": "An error has occurred"
+    "title": "An error has occurred",
+    "fetch": "Failed to fetch data from the server.",
+    "connect-server": "Failed to connect to the server.",
+    "internal-server": "An error has occured with the server.",
+    "unknown": "An unknown error has occured.",
+    "login": "Login failed, the user doesn't exist or the password is incorrect.",
+    "login-format": "Please check that the login is either a valid email address or member id.",
+    "signup": "The signup failed."
   }
 }

@@ -15,24 +15,14 @@ import Home from './home/Home';
 import Dashboard from './dashboard/Dashboard';
 import Login from './login/Login';
 import Signup from './login/Signup';
-import ErrorHandler from './error-handler/ErrorHandler';
-
 
 import './App.scss';
 
-// TODO add some logic to alter the navbar
-// if the user is connected, then remove the sign in and sign up button
-// then add the user profile button
 function App() {
   const { t } = useTranslation();
   const existingToken = JSON.parse(localStorage.getItem("token"));
   const [authToken, setAuthToken] = useState(existingToken);
   
-  // const setToken = (data) => {
-  //   localStorage.setItem("token", JSON.stringify(data));
-  //   setAuthToken(data);
-  // }
-
   const httpLink = createHttpLink({
     uri: 'http://localhost:3003/graphql'
   });
@@ -77,12 +67,10 @@ function App() {
           <section>
                 {/* <AuthContext.Consumer>{ value => <p>{value}</p>}</AuthContext.Consumer> */}
             <Switch>
-              <ErrorHandler>
                 <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
+                <Route exact path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <PrivateRoute  path="/dashboard" component={Dashboard} />
-              </ErrorHandler>
             </Switch>
           </section>
         </Router>

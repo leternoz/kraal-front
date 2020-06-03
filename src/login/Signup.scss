@@ -1,5 +1,5 @@
 @import "../styles/main.scss";
-.login {
+.signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,11 +12,20 @@
         margin-bottom: 20px;
     }
     form{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5px;
         margin-bottom: 10px;
+        label {
+            grid-column: 1;
+        }
         input {
+            grid-column: 2;
             margin-bottom: 10px;
+        }
+        button {
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
     }
 }

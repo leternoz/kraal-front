@@ -5,6 +5,8 @@ import { Mutation } from 'react-apollo';
 import { useTranslation } from 'react-i18next';
 import {useAuth} from '../context/auth';
 import { loginMutation } from '../apollo-client/apolloClient';
+import { matchServerToClientError } from '../error-handler/ErrorBoundary';
+import ErrorMessage from '../error-handler/ErrorMessage';
 
 import './Login.scss';
 
@@ -12,23 +14,24 @@ function Login(props) {
     const { t } = useTranslation();
 
     const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
-    const {authToken, setAuthToken} = useAuth();
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    const { setAuthToken } = useAuth();
+    const [error, setError] = useState('');
 
-    const referer = props.location.state && props.location.state.referer || '/dashboard';
+    const referer = (props.location.state && props.location.state.referer) || '/dashboard';
 
     function postLogin(mutation, login, password) {
+        // TODO validate the input
         mutation({variables: {login: login, password: password}})
         .then(res=>{
             setAuthToken(res.data.login.token);
             setLoggedIn(true);
         })
-        .catch(err=> {
+        .catch( err => {
             console.error(err);
-            setIsError(true);
-        }); // TODO handle error
+            setError(t(matchServerToClientError(err)));
+        });
     }   
 
     if (isLoggedIn) {
@@ -36,7 +39,7 @@ function Login(props) {
     }
 
     return (
-        <div class="login">
+        <div className="login">
             <h1>{t("authentication.login")}</h1>
             <Mutation mutation={loginMutation}>
                 { (mutation, { data }) =>  (
@@ -49,6 +52,7 @@ function Login(props) {
             </Mutation>
             <Link to="/forgot-password">{t("authentication.forgot-password")}</Link>
             <Link to="/signup">{t("authentication.not-have-account")}</Link>
+            {error && <ErrorMessage errorTitle={t("error.title")} errorMessage={error}/>}
         </div>
     );
 }

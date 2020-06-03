@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import {signupMutation} from '../apollo-client/apolloClient';
 import {useAuth} from '../context/auth';
 
-import './Login.scss';
+import './Signup.scss';
 
 function Signup() {
     const { t } = useTranslation();
@@ -36,15 +36,19 @@ function Signup() {
             <Mutation mutation={signupMutation}>
                 { (mutation, { data }) =>  (
                     <form onSubmit={e=>{e.preventDefault(); postSignup(mutation, email, memberId, password, confirmPassword)}}>
-                        <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder={t("authentication.email")}/>
-                        <input type="text" value={memberId} onChange={e=>setMemberId(e.target.value)} placeholder={t("authentication.member-id")}/>
-                        <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placholder={t("authentication.password")}/>
-                        <input type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} placholder={t("authentication.confirm-password")}/>
+                        <label for="email">{t("authentication.your-email")}</label>
+                        <input id="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="scout@sgdf.fr"/>
+                        <label for="member-id">{t("authentication.your-member-id")}</label>
+                        <input id="member-id" type="text" value={memberId} onChange={e=>setMemberId(e.target.value)} placeholder="123456789"/>
+                        <label for="password">{t("authentication.your-password")}</label>
+                        <input type="password" value={password} onChange={e=>setPassword(e.target.value)} />
+                        <label for="confirm-password">{t("authentication.confirm-password")}</label>
+                        <input id="confirm-password" type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} />
                         <button type="submit">{t("authentication.signup")}</button> 
                     </form>
                 )}
             </Mutation>
-            <Link to="/signup">{t("authentication.have-account")}</Link>
+            <Link to="/login">{t("authentication.have-account")}</Link>
         </div>
     );
 }
