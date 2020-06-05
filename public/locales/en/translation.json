@@ -1,7 +1,8 @@
 {
   "navbar": {
-    "home": "Home sweet home",
-    "dashboard": "Dashboard"
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile"
   },
   "authentication": {
     "login": "Login",

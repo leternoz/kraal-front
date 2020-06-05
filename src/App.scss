@@ -37,6 +37,7 @@ header {
         }
     }
 }
+
 section {
     display: flex;
     flex-direction: column;
@@ -48,10 +49,12 @@ section {
     h1 {
         color: #08544d;
         font-size: 2.5em;
+        font-weight: 400;
     }
     h2 {
         color: $primary;
         letter-spacing: 1px;
+        font-weight: 400;
     }
     h3 {
         color: $primary;
@@ -72,5 +75,19 @@ section {
     a {
         font-size: 1.1em;
         font-weight: 300;
+    }
+
+    .side-nav {
+        position: fixed;
+        min-width: 80px;
+        border-radius: 5px;
+        border-width: 1px;
+        top: 30%;
+        a {
+            text-decoration: none;
+        }
+        &.left {
+            left: 50px;
+        }
     }
 }

@@ -15,6 +15,7 @@ import Home from './home/Home';
 import Dashboard from './dashboard/Dashboard';
 import Login from './login/Login';
 import Signup from './login/Signup';
+import Profile from './user/Profile';
 
 import './App.scss';
 
@@ -59,6 +60,9 @@ function App() {
                   <Link to="/signup">{t("authentication.signup")}</Link>
                 </li>}
                 {authToken && <li>
+                  <Link to="/profile">{t("navbar.profile")}</Link>
+                </li>}
+                {authToken && <li>
                   <Link onClick={() => setAuthToken()} to={{pathname: "/", state: {referer: ''}}}>{t("authentication.logout")}</Link>
                 </li>}
               </ul>
@@ -70,6 +74,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
+                <PrivateRoute path="/profile" component={Profile} />
                 <PrivateRoute  path="/dashboard" component={Dashboard} />
             </Switch>
           </section>

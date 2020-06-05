@@ -47,6 +47,8 @@ function matchServerToClientError(serverError) {
         return 'error.internal-server';
     } else if(serverError.message.includes('Failed to login')) {
         return 'error.login';
+    } else if(serverError.message.includes('Network error')) {
+        return 'error.connect-server';
     } 
     return 'error.unknown';
 }
