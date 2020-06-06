@@ -46,6 +46,7 @@ function App() {
         <Router>
           <header>
             <nav>
+              <div className="logo"></div>
               <ul>
                 <li>
                   <Link to="/">{t("navbar.home")}</Link>

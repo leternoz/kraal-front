@@ -9,26 +9,26 @@ import MissionForm from './MissionForm';
 import Skill from './Skill';
 import SkillForm from './SkillForm';
 
+import './Profile.scss';
 
 function Profile(props) {    
     return (
-        <div>
+        <div className="profile">
             <Router>
-                <nav class="side-nav left">   
-                    <li><Link to={props.match.url + "/profile/personal-data"}>Profile</Link></li>
-                    <li><Link to={props.match.url + "/profile/personal-data/edit"}>ProfileForm</Link></li>
-                    <li><Link to={props.match.url + "/profile/missions"}>Mission</Link></li>
-                    <li><Link to={props.match.url + "/profile/missions/edit"}>MissionForm</Link></li>
-                    <li><Link to={props.match.url + "/profile/skills"}>Skill</Link></li>
-                    <li><Link to={props.match.url + "/profile/skills/edit"}>SkillForm</Link></li>
+                <nav class="side-nav left"> 
+                    <ul>
+                        <li><Link to={props.match.url + "/"}>PersonalData</Link></li>
+                        <li><Link to={props.match.url + "/missions"}>Mission</Link></li>
+                        <li><Link to={props.match.url + "/skills"}>Skill</Link></li>
+                    </ul> 
                 </nav>
                 <Switch>
-                    <PrivateRoute exact path={props.match.url + "/profile/personal-data"} component={PersonalData}/>
-                    <PrivateRoute exact path={props.match.url + "/profile/personal-data/edit"} component={PersonalDataForm}/>
-                    <PrivateRoute exact path={props.match.url + "/profile/missions"} component={Mission}/>
-                    <PrivateRoute exact path={props.match.url + "/profile/missions/edit"} component={MissionForm}/>
-                    <PrivateRoute exact path={props.match.url + "/profile/skills"} component={Skill}/>
-                    <PrivateRoute exact path={props.match.url + "/profile/skills/edit"} component={SkillForm}/>
+                    <PrivateRoute exact path={props.match.url + "/"} component={PersonalData}/>
+                    <PrivateRoute exact path={props.match.url + "/edit"} component={PersonalDataForm}/>
+                    <PrivateRoute exact path={props.match.url + "/missions"} component={Mission}/>
+                    <PrivateRoute exact path={props.match.url + "/missions/edit"} component={MissionForm}/>
+                    <PrivateRoute exact path={props.match.url + "/skills"} component={Skill}/>
+                    <PrivateRoute exact path={props.match.url + "/skills/edit"} component={SkillForm}/>
                 </Switch>
             </Router>
         </div>

@@ -28,5 +28,15 @@
     "login": "Impossible de se connecter, soit l'identifiant n'existe pas ou le mot de passe est invalide.",
     "login-format": "Veuillez vérifier que l'identifiant est soit une adresse mail ou un identifiant d'intranet valide.",
     "signup": "Un erreur est survenue lors de l'inscription."
+  },
+  "profile": {
+    "edit": "Modifier",
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "name": "Nom",
+    "email": "Adresse mail",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "birth": "Date de naissance"
   }
 }

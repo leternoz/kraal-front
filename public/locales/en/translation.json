@@ -28,5 +28,15 @@
     "login": "Login failed, the user doesn't exist or the password is incorrect.",
     "login-format": "Please check that the login is either a valid email address or member id.",
     "signup": "The signup failed."
+  },
+  "profile": {
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "birth": "Date of birth"
   }
 }
