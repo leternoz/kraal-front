@@ -5,16 +5,20 @@ import { useTranslation } from 'react-i18next';
 
 function PersonalData(props) {
     const { t } = useTranslation();
+    const person = props.person;
 
     return (
         <div className="profile-category">
             <h1>PersonalData</h1>
             <table>
-                <tr><td>{t("profile.name")}</td><td>the name</td></tr>
-                <tr><td>{t("profile.email")}</td><td>the email address</td></tr>
-                <tr><td>{t("profile.phone")}</td><td>the phone number</td></tr>
-                <tr><td>{t("profile.address")}</td><td>the address</td></tr>
-                <tr><td>{t("profile.birth")}</td><td>the date of birth</td></tr>
+                <tbody>
+                    <tr><td>{t("profile.name")}</td><td>{person.surname} {person.name}</td></tr>
+                    <tr><td>{t("profile.email")}</td><td>{person.email}</td></tr>
+                    <tr><td>{t("profile.phone")}</td><td>{person.phone}</td></tr>
+                    <tr><td>{t("profile.address")}</td><td>{person.address}</td></tr>
+                    <tr><td>{t("profile.city")}</td><td>{person.city && (person.city.name + " " + person.city.code)}</td></tr>
+                    <tr><td>{t("profile.birth")}</td><td>{person.dateOfBirth.year && (person.dateOfBirth.day + "/" + person.dateOfBirth.month + "/" + person.dateOfBirth.year)}</td></tr>
+                </tbody>
             </table>
             <Link to={props.match.url + "/edit"}>{t("profile.edit")}</Link>
         </div>

@@ -6,6 +6,7 @@ import './i18n';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
+import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { AuthContext } from "./context/auth";
@@ -27,17 +28,24 @@ function App() {
   const httpLink = createHttpLink({
     uri: 'http://localhost:3003/graphql'
   });
+
+  const authLink = setContext((_, { headers }) => {
+    return {
+      headers: {
+        ...headers,
+        authorization: authToken ? `Bearer ${authToken}` : ''
+      }
+    }
+  });
   
   const client = new ApolloClient({
-    link: httpLink,
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
 
-  function profile() {
-    console.log(authToken);
-    return authToken
-      ? <p>profile</p>
-      : null;
+  function logout() {
+    setAuthToken();
+    client.resetStore();
   }
 
   return (
@@ -64,7 +72,7 @@ function App() {
                   <Link to="/profile">{t("navbar.profile")}</Link>
                 </li>}
                 {authToken && <li>
-                  <Link onClick={() => setAuthToken()} to={{pathname: "/", state: {referer: ''}}}>{t("authentication.logout")}</Link>
+                  <Link onClick={() => logout()} to={{pathname: "/", state: {referer: ''}}}>{t("authentication.logout")}</Link>
                 </li>}
               </ul>
             </nav>

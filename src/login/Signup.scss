@@ -24,8 +24,8 @@
             margin-bottom: 10px;
         }
         button {
-            grid-column-start: 1;
-            grid-column-end: 3;
+            @include plain-button;
+            grid-column-start: 2;
         }
     }
 }

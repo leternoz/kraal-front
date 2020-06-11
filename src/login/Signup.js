@@ -29,20 +29,19 @@ function Signup() {
             console.error('The passwords do not match');
         }
     }
-
     return (
-        <div class="signup">
+        <div className="signup">
             <h1>{t("authentication.signup")}</h1>
             <Mutation mutation={signupMutation}>
                 { (mutation, { data }) =>  (
                     <form onSubmit={e=>{e.preventDefault(); postSignup(mutation, email, memberId, password, confirmPassword)}}>
-                        <label for="email">{t("authentication.your-email")}</label>
+                        <label htmlFor="email">{t("authentication.your-email")}</label>
                         <input id="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="scout@sgdf.fr"/>
-                        <label for="member-id">{t("authentication.your-member-id")}</label>
+                        <label htmlFor="member-id">{t("authentication.your-member-id")}</label>
                         <input id="member-id" type="text" value={memberId} onChange={e=>setMemberId(e.target.value)} placeholder="123456789"/>
-                        <label for="password">{t("authentication.your-password")}</label>
+                        <label htmlFor="password">{t("authentication.your-password")}</label>
                         <input type="password" value={password} onChange={e=>setPassword(e.target.value)} />
-                        <label for="confirm-password">{t("authentication.confirm-password")}</label>
+                        <label htmlFor="confirm-password">{t("authentication.confirm-password")}</label>
                         <input id="confirm-password" type="password" value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} />
                         <button type="submit">{t("authentication.signup")}</button> 
                     </form>

@@ -29,7 +29,7 @@ h3 {
     letter-spacing: 1px;
 }
 p, span, label, td {
-    color: #069083;
+    color: #04796d;
     font-size: 1.1em;
     font-weight: 300;
     letter-spacing: 1px;
@@ -69,7 +69,7 @@ input, input:focus {
 @mixin plain-button {
     display: inline-block;
     width: 200px;
-    padding: 5px 20px;
+    padding: 5px;
     text-align: center;
     font-size: 1.5em;
     border-radius: 20px;
@@ -79,18 +79,20 @@ input, input:focus {
     border-width: 1px;
     background-color: $primary;
     cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
     &:hover, &:focus {
         color: darken(white, 5%);
         background-color: darken($primary, 5%);
+        transition: background-color 0.1s ease-in-out;
     }    
 }
 
 @mixin empty-button {
-    width: 100px;
-    height: 37px;
-    line-height: 32px;
+    display: inline-block;
+    width: 125px;
+    padding: 5px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     border-radius: 20px;
     text-decoration: none;
     color: $primary;
@@ -98,8 +100,10 @@ input, input:focus {
     border-width: 1px;
     border-color: $primary;
     cursor: pointer;
+    transition: border-color 0.1s ease-in-out;
     &:hover, &:focus {
         color: darken($primary, 25%);
         border-color: darken($primary, 25%);
+        transition: border-color 0.1s ease-in-out;
     }
 }

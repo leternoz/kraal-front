@@ -2,13 +2,12 @@
 
 .profile {
     .profile-category {
-        display: flex;
-        flex-direction: column;
-        ul {
-            list-style: none;
-            li {
-                display: flex;
-                justify-content: space-between;
+        table {
+            margin: 20px 0;
+            tr {
+                td {
+                    padding: 5px 0;
+                }
             }
         }
         a {
