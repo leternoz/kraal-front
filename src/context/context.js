@@ -8,5 +8,5 @@ export function useAuth() {
 }
 
 export function useUserInfo() {
-    return useContext();
+    return useContext(UserInfoContext);
 }

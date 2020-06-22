@@ -37,6 +37,12 @@
     "email": "Adresse mail",
     "phone": "Téléphone",
     "address": "Adresse",
-    "birth": "Date de naissance"
+    "date-of-birth": "Date de naissance",
+    "city": "Ville",
+    "member-id": "Identifiant intranet"
+  },
+  "form": {
+    "cancel": "Annuler",
+    "save": "Enregistrer"
   }
 }

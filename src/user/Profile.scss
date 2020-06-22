@@ -8,10 +8,23 @@
                 td {
                     padding: 5px 0;
                 }
+                &:first-child {
+                    min-width: 130px;
+                }
             }
         }
         a {
             @include empty-button;
+        }
+    }
+    form {
+        button {
+            @include plain-button;
+        }
+        a {
+            @include empty-button;
+            border-color: red;
+            color: red;
         }
     }
 }

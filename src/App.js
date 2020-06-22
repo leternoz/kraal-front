@@ -9,7 +9,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { AuthContext } from "./context/auth";
+import { AuthContext } from "./context/context";
 
 import PrivateRoute from './private-route/PrivateRoute';
 import Home from './home/Home';
@@ -49,7 +49,7 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={{ authToken, setAuthToken}}>
+    <AuthContext.Provider value={{ authToken, setAuthToken }}>
       <ApolloProvider client={client}>
         <Router>
           <header>

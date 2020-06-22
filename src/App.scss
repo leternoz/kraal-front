@@ -1,5 +1,59 @@
 @import "styles/main.scss";
 
+h1 {
+    color: #08544d;
+    font-size: 2.5em;
+    font-weight: 400;
+}
+h2 {
+    color: $primary;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+h3 {
+    color: $primary;
+    font-size: 1.3em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+p, span, label, td {
+    color: #04796d;
+    font-size: 1.1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+button, input {
+    color: #069083;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+a {
+    font-size: 1.1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+::placeholder {
+    color: #5ac9be;
+}
+input {
+    display: block;
+    width: 350px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: $darkgrey;
+    box-sizing: border-box;
+    border-width: 1px;
+    border: none;
+    border-bottom: 1px solid $lightgrey;
+    transition: box-shadow 0.3s ease-in-out;
+    &:focus {
+        border-bottom: 2px solid $primary;
+        box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.4);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+}
+
 #root {
     min-height: 100%;
     background-color: $secondary;

@@ -33,10 +33,19 @@
     "edit": "Edit",
     "save": "Save",
     "cancel": "Cancel",
+    "surname": "Surname",
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
-    "birth": "Date of birth"
+    "date-of-birth": "Date of birth",
+    "city": "City",
+    "city-name": "City name",
+    "city-code": "City code",
+    "member-id": "Member id"
+  },
+  "form": {
+    "cancel": "Cancel",
+    "save": "Save"
   }
 }

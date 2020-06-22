@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 
 import { useTranslation } from 'react-i18next';
-import {useAuth} from '../context/auth';
+import {useAuth} from '../context/context';
 import { loginMutation } from '../apollo-client/apolloClient';
 import { matchServerToClientError } from '../error-handler/ErrorBoundary';
 import ErrorMessage from '../error-handler/ErrorMessage';
@@ -44,9 +44,11 @@ function Login(props) {
             <Mutation mutation={loginMutation}>
                 { (mutation, { data }) =>  (
                     <form onSubmit={e=>{e.preventDefault();postLogin(mutation, login, password)}}>
-                        <input type="email" value={login} onChange={e=>setLogin(e.target.value)} placeholder={t("authentication.email") + ', ' + t("authentication.member-id")}/>
-                        <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placholder={t("authentication.password")}/>
-                        <button type="submit">Sign in</button> 
+                        <label htmlFor="login">{t("authentication.email") + ', ' + t("authentication.member-id")}</label>
+                        <input id="login" type="email" value={login} onChange={e=>setLogin(e.target.value)} placeholder={t("authentication.email") + ', ' + t("authentication.member-id")}/>
+                        <label htmlFor="password">{t("authentication.password")}</label>
+                        <input id="password" type="password" value={password} onChange={e=>setPassword(e.target.value)} placholder={t("authentication.password")}/>
+                        <button type="submit">{t("authentication.login")}</button> 
                     </form>
                 )}
             </Mutation>
