@@ -47,15 +47,14 @@ function Profile(props) {
     
     return (
         <UserInfoContext.Provider value={{userInfo, setUserInfo}}>
-            <Query query={query}>
+            <Query query={query} onCompleted={ data => setUserInfo(data.getProfile)}>
                 {({ loading, error, data }) => {
                     if(loading) {
                         return (<p>loading</p>);
                     }
                     if(error) {
                         return (<ErrorMessage errorTitle={t("error.title")} errorMessage={error}/>);
-                    }
-                    setUserInfo(data.getProfile); 
+                    } 
                     if(userInfo) {
                         return (
                             <div className="profile">
