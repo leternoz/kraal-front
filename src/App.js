@@ -17,6 +17,7 @@ import Dashboard from './dashboard/Dashboard';
 import Login from './login/Login';
 import Signup from './login/Signup';
 import Profile from './user/Profile';
+import Advertisement from './advertisement/Advertisement';
 
 import './App.scss';
 
@@ -54,10 +55,15 @@ function App() {
         <Router>
           <header>
             <nav>
-              <div className="logo"></div>
+              <Link to="/" className="logo">
+                <img src="logo.png"/>
+              </Link>
               <ul>
                 <li>
                   <Link to="/">{t("navbar.home")}</Link>
+                </li>
+                <li>
+                  <Link to="/ads">{t("advertisement.advertisement")}</Link>
                 </li>
                 {authToken && <li>
                   <Link to="/dashboard">{t("navbar.dashboard")}</Link>
@@ -83,6 +89,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/ads" component={Advertisement} />
                 <PrivateRoute path="/profile" component={Profile} />
                 <PrivateRoute  path="/dashboard" component={Dashboard} />
             </Switch>

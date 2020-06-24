@@ -69,7 +69,7 @@ function PersonalDataForm(props) {
                         <label htmlFor="phone">{t("profile.phone")}</label>
                         <input id="phone" type="text" defaultValue={userInfo.person.phone} onChange={e => setPhone(e.target.value)}/>
                         <label htmlFor="address">{t("profile.address")}</label>
-                        <input id="address" type="text" defaultValue={userInfo.person.address} onChange={e => setAddress(e.target.value)}/>
+                        <textarea id="address" defaultValue={userInfo.person.address} onChange={e => setAddress(e.target.value)}/>
                         <label htmlFor="date-of-birth">{t("profile.date-of-birth")}</label>
                         <input id="date-of-birth" type="date" defaultValue={isoDateOfBirth} onChange={e => setDateOfBirth(e.target.value)}/>
                         <button type="submit">{t("form.save")}</button> 

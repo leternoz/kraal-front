@@ -6,13 +6,12 @@ import {useUserInfo} from '../context/context';
 
 function PersonalData(props) {
     const { t } = useTranslation();
-    const u = useUserInfo();
     const { userInfo } = useUserInfo();
     const person = userInfo.person;
 
     return (
         <div className="profile-category">
-            <h1>PersonalData</h1>
+            <h1>{t("profile.personal-data")}</h1>
             <table>
                 <tbody>
                     <tr><td>{t("profile.name")}</td><td>{person.surname} {person.name}</td></tr>

@@ -30,6 +30,7 @@
     "signup": "Un erreur est survenue lors de l'inscription."
   },
   "profile": {
+    "personal-data": "Informations personnelles",
     "edit": "Modifier",
     "save": "Sauvegarder",
     "cancel": "Annuler",
@@ -40,6 +41,22 @@
     "date-of-birth": "Date de naissance",
     "city": "Ville",
     "member-id": "Identifiant intranet"
+  },
+  "advertisement": {
+    "advertisement": "Annonce",
+    "publish-ad": "Publier une annonce",
+    "publish": "Poster",
+    "event": "Evènement",
+    "offer": "Offre",
+    "request": "Demande",
+    "ask": "Question",
+    "answer": "Répondre",
+    "report": "Signaler",
+    "share": "Partager",
+    "view-profile": "Voir le profil",
+    "publish-title": "Le titre de ta publication",
+    "publish-body": "Dis-nous ce que tu as à nous dire...",
+    "comments": "commentaires"
   },
   "form": {
     "cancel": "Annuler",

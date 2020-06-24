@@ -30,6 +30,7 @@
     "signup": "The signup failed."
   },
   "profile": {
+    "personal-data": "Personal data",
     "edit": "Edit",
     "save": "Save",
     "cancel": "Cancel",
@@ -43,6 +44,22 @@
     "city-name": "City name",
     "city-code": "City code",
     "member-id": "Member id"
+  },
+  "advertisement": {
+    "advertisement": "Advertisement",
+    "publish-ad": "Publish an advertisement",
+    "publish": "Publish",
+    "event": "Event",
+    "offer": "Offer",
+    "request": "Request",
+    "ask": "Ask",
+    "answer": "Answer",
+    "report": "Report",
+    "share": "Share",
+    "view-profile": "View the profile",
+    "publish-title": "The title of your ad",
+    "publish-body": "Please, tell us what you want to say...",
+    "comments": "comments"
   },
   "form": {
     "cancel": "Cancel",

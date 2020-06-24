@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { useTranslation } from 'react-i18next';
 
-import { UserInfoContext, useUserInfo } from '../context/context';
+import { UserInfoContext } from '../context/context';
 import PersonalData from './PersonalData';
 import PersonalDataForm from './PersonalDataForm';
 import Mission from './Mission';

@@ -3,6 +3,7 @@
 $primary: #67b584;
 $secondary: #fbfdff;
 $third: #6c9286;
+$lightergrey: #f7f7f7;
 $lightgrey: #dfdfdf;
 $grey: #8a8a8a;
 $darkgrey: #757575;
@@ -15,15 +16,17 @@ $warning: orange;
 @mixin hidden {
     position: absolute;
     opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 @mixin plain-button {
     display: inline-block;
-    width: 200px;
+    min-width: 180px;
     padding: 5px;
     text-align: center;
     font-size: 1.5em;
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
     border-style: solid;
@@ -57,4 +60,33 @@ $warning: orange;
         border-color: darken($primary, 25%);
         transition: border-color 0.1s ease-in-out;
     }
+}
+
+@mixin link-button {
+    font-weight: 400;
+    letter-spacing: 0;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin light-button {
+    width: 225px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    &:hover {
+        background-color: $lightgrey;
+        cursor: pointer;
+    }
+}
+
+@mixin card {
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
